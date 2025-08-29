@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="google-site-verification" content="6peNPgTpFkVfo1DaONbOqQaDiTcU4Gcw21vMA-Siu_Y" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>commerced.com</title>
+<style>
+:root{--bg:#0f1724;--card:#0b1220;--accent:#00b4d8;--muted:#9aa7b2;--glass:rgba(255,255,255,0.04)}
+*{box-sizing:border-box;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial}
+body{margin:0;background:linear-gradient(180deg,#071423 0%, #071726 60%),var(--bg);color:#e6f0f6;min-height:100vh}
+.header{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;background:linear-gradient(90deg,rgba(255,255,255,0.02),transparent)}
+.brand{display:flex;gap:12px;align-items:center;font-weight:700;letter-spacing:0.6px}
+.logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#00b4d8,#0077b6);display:flex;align-items:center;justify-content:center;font-size:18px}
+.nav{display:flex;gap:14px;align-items:center}
+.nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;transition:all .18s}
+.nav a:hover{color:#fff;background:var(--glass);transform:translateY(-2px)}
+.primary{background:linear-gradient(90deg,#00b4d8,#0077b6);color:#03121a;padding:10px 14px;border-radius:10px;font-weight:700}
+.container{max-width:1150px;margin:28px auto;padding:0 20px}
+.hero{display:flex;gap:24px;align-items:center;justify-content:space-between;margin-bottom:22px}
+.hero-left{flex:1}
+.title{font-size:28px;margin:0 0 8px;color:#eaf6fb}
+.subtitle{color:var(--muted);margin:0 0 16px}
+.searchbar{display:flex;gap:8px;max-width:520px}
+.searchbar input{flex:1;padding:12px 14px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+.searchbar button{padding:12px 14px;border-radius:10px;border:none;background:var(--primary,linear-gradient(90deg,#00b4d8,#0077b6));cursor:pointer}
+.hero-right{width:320px;padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:12px;align-items:center;transition:transform .18s,box-shadow .18s}
+.card:hover{transform:translateY(-8px);box-shadow:0 18px 40px rgba(2,6,23,0.7)}
+.card img{width:100%;height:180px;object-fit:cover;border-radius:10px}
+.info{width:100%;display:flex;justify-content:space-between;align-items:center}
+.name{font-weight:600}
+.price{background:rgba(255,255,255,0.04);padding:8px 10px;border-radius:8px;font-weight:700}
+.actions{display:flex;gap:8px;width:100%}
+.btn{flex:1;padding:10px;border-radius:10px;border:none;cursor:pointer;font-weight:700}
+.buy{background:linear-gradient(90deg,#00b4d8,#0077b6);color:#03121a}
+.cart{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+footer{margin:28px 0 40px;color:var(--muted);text-align:center}
+.topline{display:flex;gap:12px;align-items:center}
+.badge{background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:999px;color:var(--muted);font-weight:600}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.hero{flex-direction:column;align-items:flex-start}.hero-right{width:100%}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.nav{display:none}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="brand">
+    <div class="logo">C</div>
+    <div>
+      <div style="font-size:14px">commerced.com</div>
+      <div style="font-size:12px;color:var(--muted)">best seller • simple • clean</div>
+    </div>
+  </div>
+ <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+    <a class="primary" href="payment.html">Payment</a>
+  </nav>
+</header>
+
+<main class="container">
+  <section id="home" class="hero">
+    <div class="hero-left">
+      <div class="topline">
+        <div class="badge">New drops</div>
+        <div style="color:var(--muted);font-size:13px">Free shipping over ₹1999</div>
+      </div>
+      <h1 class="title">Welcome to commerced.com — quick picks for you ✨</h1>
+      <p class="subtitle">Simple store , best vibe. Browse the items below and try the mock checkout.</p>
+      <div class="searchbar" role="search">
+        <input placeholder="Search products (try: sneakers, headphones)" id="search" />
+        <button id="searchBtn">Search</button>
+      </div>
+    </div>
+    <aside class="hero-right">
+      <div style="font-weight:700;margin-bottom:8px">Cart summary</div>
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div style="color:var(--muted)">Items</div>
+        <div id="cartCount" style="font-weight:700">0</div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px">
+        <div style="color:var(--muted)">Subtotal</div>
+        <div id="subtotal" style="font-weight:700">₹0</div>
+      </div>
+      <div style="margin-top:14px;display:flex;gap:8px">
+        <button class="btn buy" id="checkoutBtn">Checkout</button>
+        <button class="btn cart" id="clearBtn">Clear</button>
+      </div>
+    </aside>
+  </section>
+
+  <section>
+    <div class="grid" id="products">
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIL_DSkKWJVHx3nbNquHmoZe0f2HcQtp0gRQ&s" alt="Sneakers">
+        <div class="info"><div class="name">Sneakers</div><div class="price">₹2,499</div></div>
+        <div class="actions"><button class="btn buy" data-name="Sneakers" data-price="2499">Buy</button><button class="btn cart" data-name="AirFlex Sneakers" data-price="2499">Add to Cart</button></div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_dvlBkju-dkoyOt9BqIWAFmiqDRZHUPIcRw&s" alt="Headphones">
+        <div class="info"><div class="name">Headphones</div><div class="price">₹3,199</div></div>
+        <div class="actions"><button class="btn buy" data-name="Headphones" data-price="3199">Buy</button><button class="btn cart" data-name="Studio Bass Headphones" data-price="3199">Add to Cart</button></div>
+      </div>
+
+      <div class="card">
+        <img src="https://viaterragear.com/cdn/shop/files/GS310GSTrailpack_01.webp?v=1711864992" alt="Backpack">
+        <div class="info"><div class="name">Backpack</div><div class="price">₹1,299</div></div>
+        <div class="actions"><button class="btn buy" data-name="Backpack" data-price="1299">Buy</button><button class="btn cart" data-name="TrailPack Backpack" data-price="1299">Add to Cart</button></div>
+      </div>
+
+      <div class="card">
+        <img src="https://cdn.mos.cms.futurecdn.net/FkGweMeB7hdPgaSFQdgsfj.jpg" alt="Smartwatch">
+        <div class="info"><div class="name">Smartwatch</div><div class="price">₹4,899</div></div>
+        <div class="actions"><button class="btn buy" data-name="Smartwatch" data-price="4899">Buy</button><button class="btn cart" data-name="Pulse Smartwatch" data-price="4899">Add to Cart</button></div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHTSbD3EVLf3-ZESsX9YbUIknHrUKG2jc8sA&s" alt="Sunglasses">
+        <div class="info"><div class="name">Shades</div><div class="price">₹799</div></div>
+        <div class="actions"><button class="btn buy" data-name="Shades" data-price="799">Buy</button><button class="btn cart" data-name="Shades Classic" data-price="799">Add to Cart</button></div>
+      </div>
+
+      <div class="card">
+        <img src="https://yourdesignstore.s3.amazonaws.com/uploads/yds/productImages/thumb/1629717737612384e9619ceYDS_Product_4@2x.jpg" alt="Jacket">
+        <div class="info"><div class="name">Leather Jacket</div><div class="price">₹5,299</div></div>
+        <div class="actions"><button class="btn buy" data-name="Leather Jacket" data-price="5299">Buy</button><button class="btn cart" data-name="Urban Leather Jacket" data-price="5299">Add to Cart</button></div>
+      </div>
+
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbtWG6BFb3pRmz-WIKpVm2bEp9UlHpDdDfqQ&s" alt="iphone">
+        <div class="info"><div class="name">Iphone</div><div class="price">₹50,299</div></div>
+        <div class="actions"><button class="btn buy" data-name="Iphone" data-price="50299">Buy</button><button class="btn cart" data-name="Urban Leather Jacket" data-price="5299">Add to Cart</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" style="margin-top:28px;background:linear-gradient(180deg,transparent,rgba(255,255,255,0.02));padding:18px;border-radius:12px">
+    <h3 style="margin:0 0 8px">About Us</h3>
+    <p style="margin:0;color:var(--muted)">A simple store to showcase UI and basic interactions. No backend, mock checkout only.</p>
+  </section>
+
+  <section id="contact" style="margin-top:14px;display:flex;gap:18px;flex-wrap:wrap">
+    <div style="flex:1;min-width:260px;background:rgba(255,255,255,0.02);padding:16px;border-radius:12px">
+      <h4 style="margin:0 0 8px">Contact Us</h4>
+      <div style="color:var(--muted)">Email: hello@commerced.com</div>
+      <div style="color:var(--muted);margin-top:6px">Phone: +91 90000 00000</div>
+    </div>
+    <div style="flex:1;min-width:260px;background:rgba(255,255,255,0.02);padding:16px;border-radius:12px">
+      <h4 style="margin:0 0 8px">Payment</h4>
+      <div style="color:var(--muted)">Click the Payment button in the nav for a mock payment screen.</div>
+    </div>
+  </section>
+
+  <section id="payment" style="margin-top:18px;display:none" aria-hidden="true">
+    <div style="background:rgba(255,255,255,0.02);padding:18px;border-radius:12px">
+      <h3 style="margin:0 0 8px">Mock Payment</h3>
+      <div style="color:var(--muted);margin-bottom:12px">This is a front-end demo. Enter any details to simulate a payment.</div>
+      <div style="display:flex;flex-direction:column;gap:8px;max-width:420px">
+        <input id="name" placeholder="Name on card" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+        <input id="card" placeholder="Card number" style="padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+        <div style="display:flex;gap:8px">
+          <input id="exp" placeholder="MM/YY" style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+          <input id="cvv" placeholder="CVV" style="width:120px;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+        </div>
+        <button class="btn buy" id="payNow">Pay ₹<span id="payAmount">0</span></button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © commerced.com • student demo • no real payments
+  </footer>
+</main>
+
+<script>
+let cart = []
+function updateCart(){const c=document.getElementById('cartCount');const s=document.getElementById('subtotal');const total=cart.reduce((a,b)=>a+b.price,0);c.textContent=cart.length;s.textContent='₹'+total}
+document.querySelectorAll('.btn.cart').forEach(b=>b.addEventListener('click',e=>{const n=e.currentTarget.dataset.name;const p=Number(e.currentTarget.dataset.price);cart.push({name:n,price:p});updateCart()}))
+document.querySelectorAll('.btn.buy').forEach(b=>b.addEventListener('click',e=>{const n=e.currentTarget.dataset.name;const p=Number(e.currentTarget.dataset.price);cart.push({name:n,price:p});updateCart();openPayment()}))
+document.getElementById('clearBtn').addEventListener('click',()=>{cart=[];updateCart()})
+document.getElementById('checkoutBtn').addEventListener('click',openPayment)
+function openPayment(){document.getElementById('payment').style.display='block';document.getElementById('payment').ariaHidden='false';document.getElementById('payAmount').textContent=cart.reduce((a,b)=>a+b.price,0)}
+document.getElementById('payNow').addEventListener('click',()=>{alert('Payment simulated. Thank you 😊');cart=[];updateCart();document.getElementById('payment').style.display='none'})
+document.getElementById('payBtn').addEventListener('click',e=>{e.preventDefault();openPayment()})
+document.getElementById('searchBtn').addEventListener('click',()=>{const q=document.getElementById('search').value.toLowerCase();const cards=document.querySelectorAll('.card');cards.forEach(c=>{const name=c.querySelector('.name').textContent.toLowerCase();c.style.display=name.includes(q)||q===''?'flex':'none'})})
+</script>
+</body>
+</html>
